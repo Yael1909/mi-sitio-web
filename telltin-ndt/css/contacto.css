@@ -1,0 +1,368 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --azul:#0002FC;
+    --amarillo:#F0FD17;
+    --gris:#7B8191;
+}
+
+html, body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    background:var(--gris);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:70px;
+}
+
+.logo img{
+    height:55px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--amarillo);
+}
+
+.nav-links i{
+    color:var(--amarillo);
+}
+
+/* =========================
+   HAMBURGUESA (OCULTA EN PC)
+========================= */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+.contacto-form-section{
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.contacto-form-section h1{
+    color:var(--black);
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.contacto-form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contacto-form input,
+.contacto-form textarea{
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.contacto-form textarea{
+    min-height:120px;
+    resize:none;
+}
+
+.contacto-form button{
+    padding:12px;
+    background:var(--azul);
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contacto-form button:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* =========================
+   LINEA
+========================= */
+.linea{
+    width:80%;
+    height:2px;
+    background:var(--azul);
+    margin:40px auto;
+}
+
+/* =========================
+   MAPA
+========================= */
+.mapa-section{
+    text-align:center;
+    padding:20px;
+}
+
+.mapa-section h2{
+    color:var(--black);
+    margin-bottom:20px;
+}
+
+.mapa-container{
+    position:relative;
+    max-width:700px;
+    margin:auto;
+}
+
+.mapa-img{
+    width:100%;
+    display:block;
+}
+
+/* puntos */
+.punto{
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:var(--amarillo);
+    border:3px solid var(--azul);
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.punto:hover{
+    transform:scale(1.3);
+}
+
+/* info sede */
+.info-sede{
+    margin-top:20px;
+    background:#f5f7ff;
+    padding:20px;
+    border-radius:12px;
+    max-width:500px;
+    margin:auto;
+}
+
+/* =========================
+   REDES PREVIEW (ESTILO POSTS)
+========================= */
+.redes-preview{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.redes-preview h2{
+    color:var(--black);
+    margin-bottom:20px;
+}
+
+.redes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.red-card{
+    background:#f5f7ff;
+    border-radius:12px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.red-card:hover{
+    transform:translateY(-8px);
+}
+
+/* “imagen fake de red social” */
+.red-card .preview{
+    height:140px;
+    background:#ccc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    color:#666;
+}
+
+/* contenido */
+.red-card-content{
+    padding:15px;
+}
+
+.red-card i{
+    font-size:24px;
+    color:var(--azul);
+    margin-bottom:8px;
+}
+
+.red-card button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    border-radius:8px;
+    background:var(--azul);
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.red-card button:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:var(--gris);
+    color:white;
+    padding:60px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.footer-links a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:8px 0;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:var(--amarillo);
+    transform:translateX(5px);
+}
+
+.footer-links i{
+    color:var(--amarillo);
+}
+
+/* form footer */
+.footer-form input,
+.footer-form textarea{
+    width:100%;
+    padding:10px;
+    margin:6px 0;
+    border:none;
+    border-radius:8px;
+}
+
+.footer-form button{
+    width:100%;
+    padding:10px;
+    background:var(--azul);
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.footer-form button:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* redes footer */
+.social-icons{
+    display:flex;
+    gap:15px;
+    font-size:20px;
+    margin-top:10px;
+}
+
+.social-icons a{
+    color:white;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    color:var(--amarillo);
+    transform:scale(1.2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block; /* SOLO AQUÍ aparece hamburguesa */
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:var(--gris);
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .contacto-form-section h1{
+        font-size:1.8rem;
+    }
+
+    .redes-grid{
+        grid-template-columns:1fr;
+    }
+}

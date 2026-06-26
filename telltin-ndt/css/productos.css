@@ -1,0 +1,279 @@
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --azul:#0002FC;
+    --amarillo:#F0FD17;
+    --gris:#7B8191;
+}
+
+html, body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR (IGUAL AL INDEX)
+========================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    background:var(--gris);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:70px;
+}
+
+.logo img{
+    height:55px;
+}
+
+/* LINKS NAV */
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:.3s;
+}
+
+/* hover navbar */
+.nav-links a:hover{
+    color:var(--amarillo);
+}
+
+.nav-links a:hover i{
+    color:var(--amarillo);
+}
+
+.nav-links i{
+    color:var(--amarillo);
+}
+
+/* =========================
+   HEADER
+========================= */
+.productos-header{
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.productos-header h1{
+    font-size:2.2rem;
+    color:var(--black);
+}
+
+.productos-header p{
+    max-width:800px;
+    margin:10px auto 0;
+}
+
+/* =========================
+   PRODUCTOS GRID
+========================= */
+.productos-section{
+    padding:40px 20px;
+}
+
+.productos-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:25px;
+}
+
+/* =========================
+   CARD PRODUCTOS PND
+========================= */
+.product-card{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+/* imagen estilo industrial */
+.product-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    filter:grayscale(100%);
+    transition:.5s ease;
+    display:block;
+}
+
+/* color al hover */
+.product-card:hover img{
+    filter:grayscale(0%);
+    transform:scale(1.05);
+}
+
+/* overlay texto */
+.producto-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    color:white;
+    background:linear-gradient(to top, rgba(0,0,0,.85), transparent);
+}
+
+/* =========================
+   FOOTER (IGUAL AL INDEX)
+========================= */
+footer{
+    background:var(--gris);
+    color:white;
+    padding:60px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* links footer */
+.footer-links a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:8px 0;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+/* hover footer */
+.footer-links a:hover{
+    color:var(--amarillo);
+    transform:translateX(5px);
+}
+
+.footer-links a:hover i{
+    color:var(--amarillo);
+}
+
+.footer-links i{
+    color:var(--amarillo);
+}
+
+/* formulario */
+.footer-form input,
+.footer-form textarea{
+    width:100%;
+    padding:10px;
+    margin:6px 0;
+    border:none;
+    border-radius:8px;
+}
+
+.footer-form button{
+    width:100%;
+    padding:10px;
+    background:var(--azul);
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.footer-form button:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* redes */
+.social-icons{
+    display:flex;
+    gap:15px;
+    font-size:20px;
+    margin-top:10px;
+}
+
+.social-icons a{
+    color:white;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    color:var(--amarillo);
+    transform:scale(1.2);
+}
+
+/* =========================
+   HAMBURGUESA
+========================= */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px){
+
+    .navbar{
+        padding:12px 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:var(--gris);
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .productos-header h1{
+        font-size:1.8rem;
+    }
+
+    .product-card img{
+        height:200px;
+    }
+
+    .footer-container{
+        text-align:center;
+    }
+}

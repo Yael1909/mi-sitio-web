@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Empresa</title>
+
+    <link rel="stylesheet" href="css/contacto.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ========================= NAVBAR ========================= -->
+<header class="navbar">
+
+    <div class="logo">
+        <img src="img/logo.jpg" alt="Logo">
+    </div>
+
+    <!-- hamburguesa -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li><a href="productos.html"><i class="fa-solid fa-box"></i> Productos</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+    </ul>
+
+</header>
+
+<!-- ========================= FORMULARIO ========================= -->
+<section class="contacto-form-section">
+
+    <h1>Contacto</h1>
+
+    <form class="contacto-form">
+        <input type="text" placeholder="Nombre">
+        <input type="email" placeholder="Correo">
+        <input type="text" placeholder="Empresa">
+        <textarea placeholder="Mensaje"></textarea>
+
+        <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Enviar
+        </button>
+    </form>
+
+</section>
+
+<div class="linea"></div>
+
+<!-- ========================= MAPA ========================= -->
+<section class="mapa-section">
+
+    <h2>Nuestras Sedes</h2>
+
+    <div class="mapa-container">
+
+        <img src="img/mexico.svg" class="mapa-img" alt="Mapa de México">
+
+        <!-- PUNTOS -->
+        <div class="punto" style="top:41%; left:57%;" onclick="mostrarSede('nl')"></div>
+        <div class="punto" style="top:70%; left:57%;" onclick="mostrarSede('edomex')"></div>
+        <div class="punto" style="top:74%; left:83%;" onclick="mostrarSede('carmen')"></div>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="info-sede" id="info-sede">
+        <p>Selecciona una sede en el mapa</p>
+    </div>
+
+</section>
+
+<div class="linea"></div>
+
+<!-- ========================= REDES SOCIALES ========================= -->
+<section class="redes-preview">
+
+    <h2>Síguenos en redes sociales</h2>
+
+    <div class="redes-grid">
+
+        <!-- FACEBOOK -->
+        <div class="red-card" onclick="window.open('https://facebook.com','_blank')">
+
+            <div class="preview">
+                <img src="img/facebook-preview.jpg" alt="Facebook preview">
+            </div>
+
+            <div class="red-card-content">
+                <i class="fa-brands fa-facebook"></i>
+                <h3>Facebook</h3>
+                <button>Seguir</button>
+            </div>
+
+        </div>
+
+        <!-- INSTAGRAM -->
+        <div class="red-card" onclick="window.open('https://instagram.com','_blank')">
+
+            <div class="preview">
+                <img src="img/instagram-preview.jpg" alt="Instagram preview">
+            </div>
+
+            <div class="red-card-content">
+                <i class="fa-brands fa-instagram"></i>
+                <h3>Instagram</h3>
+                <button>Seguir</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-links">
+            <h3>Menú</h3>
+            <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+            <a href="productos.html"><i class="fa-solid fa-box"></i> Productos</a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+        </div>
+
+        <div class="footer-form">
+            <h3>Mensaje rápido</h3>
+
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Correo">
+            <input type="text" placeholder="Empresa">
+            <textarea placeholder="Mensaje"></textarea>
+
+            <button>Enviar</button>
+        </div>
+
+        <div>
+            <h3>Contacto</h3>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+
+                <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ========================= SCRIPT MAPA ========================= -->
+<script>
+function mostrarSede(sede){
+
+    const info = document.getElementById("info-sede");
+
+    if(sede === "nl"){
+        info.innerHTML = `
+            <h3><i class="fa-solid fa-map-pin"></i> Nuevo León</h3>
+            <p><i class="fa-solid fa-phone"></i> +52 81 0000 0000</p>
+            <p><i class="fa-solid fa-envelope"></i> nl@empresa.com</p>
+        `;
+    }
+
+    if(sede === "edomex"){
+        info.innerHTML = `
+            <h3><i class="fa-solid fa-map-pin"></i> Estado de México</h3>
+            <p><i class="fa-solid fa-phone"></i> +52 55 0000 0000</p>
+            <p><i class="fa-solid fa-envelope"></i> edomex@empresa.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> Ojo de Agua</p>
+        `;
+    }
+
+    if(sede === "carmen"){
+        info.innerHTML = `
+            <h3><i class="fa-solid fa-map-pin"></i> Ciudad del Carmen</h3>
+            <p><i class="fa-solid fa-phone"></i> +52 938 000 0000</p>
+            <p><i class="fa-solid fa-envelope"></i> carmen@empresa.com</p>
+        `;
+    }
+}
+</script>
+
+<!-- hamburguesa script -->
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-links");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --azul:#0002FC;
+    --amarillo:#F0FD17;
+    --gris:#7B8191;
+}
+
+html, body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 40px;
+    background:var(--gris);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:70px;
+}
+
+.logo img{
+    height:55px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:.3s;
+}
+
+/* 🔥 HOVER NAVBAR (TE FALTABA) */
+.nav-links a:hover{
+    color:var(--amarillo);
+}
+
+.nav-links a:hover i{
+    color:var(--amarillo);
+}
+
+.nav-links i{
+    color:var(--amarillo);
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+.carrusel{
+    position:relative;
+    width:100%;
+    margin-top:-1px;
+    height:420px;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:1s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.fondo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.contenido-slide{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    align-items:center;
+    gap:40px;
+    width:90%;
+    max-width:1100px;
+}
+
+.equipo{
+    width:260px;
+}
+
+.texto-slide{
+    background:rgba(0,0,0,.6);
+    color:white;
+    padding:20px;
+    border-radius:12px;
+    max-width:500px;
+}
+
+/* =========================
+   INFO CARDS
+========================= */
+.info-section{
+    max-width:1200px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:0 20px;
+}
+
+.info-card{
+    background:#f5f7ff;
+    padding:25px;
+    border-radius:12px;
+    border-top:4px solid var(--azul);
+    transition:.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-8px);
+}
+
+.info-card i{
+    color:var(--azul);
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   LINEA
+========================= */
+.linea{
+    width:80%;
+    height:2px;
+    background:var(--azul);
+    margin:40px auto;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+.productos-section{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.productos-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product-card{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.product-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    filter:grayscale(100%);
+    transition:.4s;
+    display:block;
+}
+
+.product-card:hover img{
+    filter:grayscale(0%);
+    transform:scale(1.05);
+}
+
+.producto-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    color:white;
+    background:linear-gradient(to top, rgba(0,0,0,.8), transparent);
+}
+
+/* botón */
+.btn-mas{
+    margin-top:40px;
+    display:inline-block;
+    background:var(--azul);
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-mas:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:var(--gris);
+    color:white;
+    padding:60px 20px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* =========================
+   FOOTER LINKS (ARREGLADO)
+========================= */
+.footer-links a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:8px 0;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+/* 🔥 HOVER FOOTER (TE FALTABA) */
+.footer-links a:hover{
+    color:var(--amarillo);
+    transform:translateX(5px);
+}
+
+.footer-links a:hover i{
+    color:var(--amarillo);
+}
+
+.footer-links i{
+    color:var(--amarillo);
+}
+
+/* form */
+.footer-form input,
+.footer-form textarea{
+    width:100%;
+    padding:10px;
+    margin:6px 0;
+    border:none;
+    border-radius:8px;
+}
+
+.footer-form button{
+    width:100%;
+    padding:10px;
+    background:var(--azul);
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.footer-form button:hover{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* redes */
+.social-icons{
+    display:flex;
+    gap:15px;
+    font-size:20px;
+    margin-top:10px;
+}
+
+.social-icons a{
+    color:white;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    color:var(--amarillo);
+    transform:scale(1.2);
+}
+
+/* =========================
+   HAMBURGUESA
+========================= */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:white;
+    cursor:pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px){
+
+    .navbar{
+        padding:12px 20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:var(--gris);
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px 0;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .carrusel{
+        height:320px;
+    }
+
+    .contenido-slide{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .equipo{
+        width:160px;
+    }
+
+    .texto-slide{
+        max-width:90%;
+        font-size:14px;
+    }
+
+    .product-card img{
+        height:200px;
+    }
+
+    .footer-container{
+        text-align:center;
+    }
+}
